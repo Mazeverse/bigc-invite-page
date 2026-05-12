@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>빅크(BIGC) 친구초대 이벤트 - 특별 혜택 받기</title>
+    <style>
+        :root {
+            --primary-color: #4a3aff;
+            --secondary-color: #ff6b9d;
+            --bg-color: #f8f9ff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Pretendard', -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* 메인 카드 스타일 */
+        .main-card {
+            background: white;
+            border-radius: 30px;
+            padding: 40px 30px;
+            box-shadow: 0 20px 40px rgba(74, 58, 255, 0.1);
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #eef2ff;
+            color: var(--primary-color);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #111;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .hero-text {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 35px;
+        }
+
+        /* 초대코드 박스 */
+        .invite-section {
+            background: #f3f1ff;
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .invite-label {
+            font-size: 13px;
+            color: #777;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .code-display {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .copy-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .copy-btn:active { transform: scale(0.98); }
+
+        /* 바로가기 버튼 */
+        .link-btn {
+            display: block;
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            padding: 18px;
+            border-radius: 15px;
+            font-weight: 700;
+            font-size: 18px;
+            margin-top: 15px;
+            box-shadow: 0 8px 20px rgba(255, 107, 157, 0.3);
+        }
+
+        /* 앱 설명 섹션 */
+        .info-section {
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .info-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #333;
+            display: flex;
+            align-items: center;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .icon {
+            font-size: 20px;
+            min-width: 24px;
+        }
+
+        .info-content b { color: #111; display: block; margin-bottom: 3px; }
+        .info-content p { margin: 0; font-size: 14px; color: #777; line-height: 1.4; }
+
+        footer {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #bbb;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="main-card">
+        <span class="badge">BIGC Official Invite</span>
+        <h1>빅크로 초대합니다!</h1>
+        <p class="hero-text">지금 빅크에 가입하고<br>좋아하는 아티스트의 라이브를 만나보세요.</p>
+
+        <div class="invite-section">
+            <span class="invite-label">나의 초대코드</span>
+            <span class="code-display" id="targetCode">92XRJ8VP2M</span>
+            <button class="copy-btn" onclick="copyToClipboard()">초대코드 복사하기</button>
+        </div>
+
+        <a href="https://go.bigc.im/4dlkOga" target="_blank" class="link-btn">앱 설치하고 혜택 받기 ➔</a>
+
+        <div class="info-section">
+            <div class="info-title">🚀 빅크(BIGC) 즐기기</div>
+            
+            <div class="info-item">
+                <span class="icon">📺</span>
+                <div class="info-content">
+                    <b>독점 라이브 스트리밍</b>
+                    <p>어디서도 볼 수 없는 아티스트의 고화질 라이브</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <span class="icon">💬</span>
+                <div class="info-content">
+                    <b>프라이빗 팬 커뮤니티</b>
+                    <p>아티스트와 팬이 더 가깝게 소통하는 공간</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <span class="icon">🎁</span>
+                <div class="info-content">
+                    <b>스페셜 리워드</b>
+                    <p>가입 즉시 제공되는 다양한 이벤트 혜택</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        본 페이지는 빅크 친구초대 이벤트를 위해 제작되었습니다.
+    </footer>
+</div>
+
+<script>
+    function copyToClipboard() {
+        const codeText = document.getElementById('targetCode').innerText;
+        navigator.clipboard.writeText(codeText).then(() => {
+            alert('초대코드가 복사되었습니다! 가입 시 입력해주세요. ✨');
+        });
+    }
+</script>
+
+</body>
+</html>
